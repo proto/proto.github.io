@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to survive to nightlife in Turin</title>
+
+    <meta name="description"
+          content="How to survive to bad movida" />
+    <meta name="keywords" content="turin, movida, bla bla bla, ds" />
+
+    <link rel="stylesheet" href="https://latex.now.sh/style.css">
+</head>
+
+<body id="top">
+<header>
+    <h1><span>Where is it possible to survive the nightlife in Turin?</span></h1>
+    <p class="author">
+        Alessandro R <br />
+        September 2020
+    </p>
+</header>
+
+<div class="abstract">
+    <h2>Abstract</h2>
+    <p>
+        This report intends to observe whether there is a correlation between the choice
+        of an area in which to take up residence and whether this is the optimal choice
+        in relation to commercial activities and the response of the public authorities to
+        <em>bad nightlife</em> phenomena, locally known as <em>"malamovida"</em>.
+    </p>
+</div>
+
+<nav role="navigation" class="toc">
+    <h2>Contents</h2>
+    <ol>
+        <li>
+            <a href="#Introduction">Introduction</a>
+            <ol>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#problem">Problem Definition</a></li>
+                <li><a href="#target">Target Audience</a></li>
+                <li><a href="#solution">Possible Solution</a></li>
+            </ol>
+        </li>
+        <li><a href="#data-src">Data Sources</a>
+            <ol>
+                <li><a href="#op-notes">Operation Notes</a></li>
+                <li><a href="#legal-notes">Data Licenses</a></li>
+            </ol>
+        </li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#results">Results</a>
+            <ol>
+                <li><a href="#zone-exp">Zones</a></li>
+                <li><a href="#commercial-exp">Commercial Activities</a></li>
+                <li><a href="#pa-exp">Public Authority</a></li>
+            </ol>
+        </li>
+        <li><a href="#discussion">Discussion</a></li>
+        <li><a href="#suggestion">Suggestion and Directions</a></li>
+        <li>
+            <a href="#references">References</a>
+            <ol>
+                <li><a href="#links-ext">External Links</a></li>
+                <li><a href="#footnotes">Notes</a></li>
+
+            </ol>
+        </li>
+        <li><a href="#appendix">Appendix</a></li>
+    </ol>
+
+</nav>
+
+<main>
+    <article>
+        <h2 id="Introduction">Introduction</h2>
+
+        <h3 id="background">Background</h3>
+        <p>
+            Turin has a two-thousand-year history and was the first capital of the Kingdom of Italy.
+            Since the second half of the twentieth century it has experienced a significant expansion of
+            the urban morphology and is considered one of the major Italian production centers.
+            Internal migrations in the second half of the twentieth century and subsequent
+            ones from other foreign states have further modified the social pattern of the city.
+
+            Turin is divided into 8 Districts that do not correspond to its historic districts and
+            rises on the plain bordered by its 4 rivers; the Po "divides" the city into the
+            south-north axis, delimiting the flat part of the city to the west and the
+            hilly part to the east. The city is characterized by a checkerboard road network
+            and has long tree-lined avenues of nineteenth-century origin.
+
+            In the most recent history of the city, Turin has had to go through critical
+            phases aggravated by the world economic recession of the second half of the 2000s,
+            despite receiving a slightly favorable boost during the XX Winter Olympic Games and the
+            IX Paralympic Winter Games in 2006. The Turin economic crisis, also aggravated by that
+            of its major automotive industry, forced the shift of economic activities towards the
+            secondary and tertiary sector, inaugurating a season of revaluation of fairs and cultural
+            events, museums and art centers and important public works (such as the underground
+            Metro or the railway link).
+        </p>
+
+        <h3 id="problem">Problem Definition</h3>
+        <p>
+            Despite this attempt to revive the city, some areas nevertheless remain distant from the model
+            that every city government tries to achieve. The most striking examples are the eternal conflict
+            between the center and the suburbs, the problems caused by traffic that makes the city
+            one of the most polluted in Italy or the problems caused by the "nightlife" due to a
+            concentration of clubs, pubs in some urban areas.
+
+            It is appropriate to understand what are the real estate market trends in relation to the
+            expansion of the tertiary sector, which appears to be dominated by commercial activities
+            that have replaced the classic local shops and which causes considerable civic problems
+            in some central and historic areas of the city. Furthermore, it is necessary to understand
+            the extent of the public authority and its sanctioning system in relation to the reports
+            made by affected citizens, especially in areas frequented by young people where noisy or
+            general incivility actions often occur.
+        </p>
+
+        <h3 id="target">Target Audience</h3>
+        <p>
+            The idea of this report is to help people who are planning to relocate or find a new home in
+            Turin to consider the best option for a quiet residence in the central or semi-central or
+            hill areas near the Po river (<em>precollina</em>) possibly close to public parks and easily
+            accessible by public transport.
+
+            But are these areas really recommended for a possible stakeholder with these needs?
+            The essential question is: are there islands of tranquility? And what is the response
+            of public institutions to the phenomena of disturbances and incivility in certain areas?
+        </p>
+
+        <h3 id="solution">Possible Solution</h3>
+        <p>
+            The purpose of this report is to demonstrate whether there are alternatives and whether there is
+            an impact in relocation choices in certain city areas.
+        </p>
+
+        <h2 id="data-src">Data Sources</h2>
+        <p>
+            The data essentially comes from sources of the Public Administration updated up to 2019.
+
+            The complete dataset for the analysis consists of:
+
+            datasets that contain the list of districts, zones, areas;
+            the Revenue Agency dataset containing Residential and Commercial Land Value;
+            a dataset from Local Police low crime rate (received petition and reports for disorderly conduct);
+            the local Commercial Activities dataset in conjunction with Foursquare.
+
+            The data format is provided in <em>csv/excel, geojson or geospatial</em> format.
+        </p>
+        <p>
+            Data Sources:
+        </p>
+            <ul>
+                <li><a href="http://geoportale.comune.torino.it">Geoportale Torino</a></li>
+                <li><a href="http://geoportale.comune.torino.it/geocatalogocoto/?sezione=catalogo">Geoportale Torino
+                    Catalog</a></li>
+                <li><a href="http://geoportale.comune.torino.it/geocatalogocoto/?sezione=mappa">Geoportale Torino maps</a></li>
+                <li><a href="http://aperto.comune.torino.it">Open Data Torino</a></li>
+                <li><a href="https://wwwt.agenziaentrate.gov.it/servizi/Consultazione/ricerca.htm">Agenzia Entrate OMI</a></li>
+                <li><a href="https://developer.foursquare.com/">Foursquare API</a></li>
+            </ul>
+        <p>
+            First, it is necessary to <em>normalize</em> data as they contains a possibly obsolete geocoding
+            format. For this reason the Python <em>GeoPandas</em> library<sup><a href="#fn1" id="ref1">1</a></sup>
+            is used as it extends the <em>pandas</em> datatypes with geospatial features in order to convert the
+            original data in Latitude and Longitude.
+
+            Some dataset contains the geographic information relating to the districts of the City of Turin,
+            geo-referenced according to the <em>WGS84</em><sup><a href="#fn2" id="ref2">2</a></sup> coordinate system
+            <em>EPSG: 4326</em> or <em>Monte Mario / Italy zone 1 (EPSG: 3003)</em>.
+            In the second case the coordinates are converted into the <em>WGS84 system</em>.
+
+            For a quick visualization of places of attraction such as restaurants or squares for example,
+            the <em>Foursquare API</em><sup><a href="#fn3" id="ref3">3</a></sup> is incorporated with data from other
+            datasets.
+        </p>
+
+        <p>
+            OMI Zones are a sub-zoning of main Districts and they are compiled by The Revenue Agency
+            or Agenzia delle Entrate, an italian non-economic public body that collect taxes and also
+            provides cadastral and geocartography services.
+            OMI is the acronym of Osservatorio Mercato Immobiliare that provides cadastral and land
+            registry queries for individuals and professionals. This service provides cadastral and
+            land registry data bases, plans, incomes, class and typology, zones for each cities in the country.
+            The survey sources are: real estate agencies, internal agency estimates, auctions, deeds of sale,
+            courts, etc.
+
+            OMI files can be obtained and exported in <em>zip</em> format and contain:
+        </p>
+            <ul>
+                <li>2 CSV: Value and Zone listing with zoning, residential, commercial,
+                    min and max prices for property and lease, status, typology;</li>
+                <li>1 KML file with zone coordinates defining zone, micro-zones, macro-zones,
+                    zone description.</li>
+            </ul>
+
+        <p>
+            Zones are grouped in 4 Macro Areas (Fascia):
+        </p>
+            <ul>
+                <li><strong>B: </strong>Central area</li>
+                <li><strong>C: </strong>Semi-central neighbourhoods</li>
+                <li><strong>D: </strong>Outskirts neighbourhoods</li>
+                <li><strong>E: </strong>Hills area</li>
+            </ul>
+
+        <p>
+            Local administration counts <strong>8 Districts</strong> now, while in some open data still
+            counts 10.
+            In recent years two districts have been merged with others: Districts 8 and 9 were merged
+            into District 8; Districts 2 and 10 were merged into District 2.
+        </p>
+
+
+        <h3 id="op-notes">Operational Notes</h3>
+        <p>
+            All Data Sources are <strong>pre-Covid</strong>. The Report does not consider the year 2020 and the Covid
+            <em>variable</em> although some private reports<sup><a href="#fn4" id="ref4">4</a></sup> state that the
+            real estate market has not yet suffered
+            significant decline.
+
+            Some datasets needed to be cleaned up before they could be used due to the use of
+            different character encodings (non UTF-8), different formats.
+
+            Other datasets seem incomplete or present missing data across the years, and in the worst case seem wrong.
+            Especially it seems that the public authority uses different methodology to locate street and Districts.
+
+            All dataframes labels are in original language. See Table Translation as references below.
+
+            In this report, central and semi-central zones in <em>normal</em> state have been selected.
+        </p>
+
+        <p>
+            Cartographic base is integrated with other data of the City of Turin
+            found on the Geoportal of the City of Turin and Open Data portal <em>Aperto</em>.
+        </p>
+
+        <h3 id="legal-notes">Data Licenses</h3>
+        <p>
+            License data: CC40BY, CC30BY, Agenzia delle Entrate
+        </p>
+
+
+        <h2 id="methodology">Methodology</h2>
+        <p>
+            A different methodology was applied for each part analyzed.
+            From preliminary exploration of the zones to clustering for commercial activities.
+        </p>
+
+        <p>
+            The first part of the report did not need any particular approach as it was
+            just a matter of selecting an area and then applying the averages to understand
+            how the market has moved over the years. Anyway a Clustering approach has been applied.
+            In summary, it was imagined starting from the initial demand of a possible buyer to
+            search for a prestigious area and apply the analysis taking into account the average
+            prices of the area and select the areas excluding the maximums and minimums that in
+            certain areas represent the outliers.
+        </p>
+
+        <p>
+            For the second part of the report concerning Commercial Activities, it was necessary
+            to use a <em>k-mean clustering</em> approach to understand the relationships between the various
+            <em>Districts</em> of the City and to understand what is the phenomenon of the tertiary sector
+            and if there are any components that can indicate which areas are more similar to others.
+            n this case it was necessary to start from a preliminary analysis using the Foursquare API to
+            understand which areas have the most commercial services available in certain categories.
+            In this case, the categories of Restaurants and Cafes were excluded from the survey, mainly
+            using data relating to night clubs, concerts, events. However, the data seemed rather scarce
+            and not exactly up to date, so it was also necessary to use the official data from public
+            sources updated to 2019, exceeding the search limits of the supplier.
+            As for the Foursquare API, the k-mean clustering approach was applied excluding some
+            commercial activities. However, it was not possible to discern the specific categories as
+            they were not specified in the original dataset. So we proceeded by analyzing the data to
+            select an entire category (EP) including all commercial activities relating to bars, restaurants,
+            discos and public places in general.
+        </p>
+
+        <p>
+            For the third part, relating to the repression by the public authority of incivility and abuse
+            phenomena in certain areas, a simple regression was used considering the number of reports
+            and the number of notifications issued as values.
+        </p>
+
+
+        <h2 id="results">Results</h2>
+        <p>
+            The following are the results of the analysis
+        </p>
+
+        <h3 id="zone-exp">Zone Exploration</h3>
+        <p>
+            The selected areas are the central one colored with shades of gray.
+        <br>
+            Macro areas <strong>B</strong> is the top rated.
+        </p>
+        <figure>
+            <img src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/TO_zone_prices.png" loading="lazy" alt="TO Zones prices" width="600" height="400">
+            <figcaption>Zone Prices</figcaption>
+
+            <img src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/omi_4y_resonly_box.png" loading="lazy" alt="TO Zone market 4 years" width="600" height="400">
+            <figcaption>Zone market in 4 year</figcaption>
+        </figure>
+
+        <p>
+            These are the Zones selected: central, semi-central in normal status.
+        </p>
+
+        <figure>
+            <img src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/TO_selected_zones.png" loading="lazy" alt="TO Sel Zones" width="600" height="400">
+            <figcaption>Selected OMI Zones</figcaption>
+
+            <img src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/TO_zones_cluster1.png" loading="lazy" alt="TO Zone Clustering" width="600" height="400">
+            <figcaption>Selected OMI Zones Clustering</figcaption>
+        </figure>
+
+        <h3 id="commercial-exp">Commercial Exploration</h3>
+        <p>
+            The commercial areas especially belonging to the <em>EP</em> (Public Places) category have increased since
+            the second half of the 2000s.
+            <br>
+            In particular, there is an increase after 2012, presumably caused by the national policy of economic
+            <em>Liberalization</em> following the global economic crisis. This policy - in a nutshell - has in fact
+            "unlocked" the previous one in which the local market was in some way bound by rules that prevented
+            the opening of commercial establishments too close to each other.
+            <br>
+            Obviously the central areas are better served than the peripheral ones and concentrate the greatest
+            number of commercial activities to serve not only the resident population but also offices and tourists.
+        </p>
+
+        <h4>Commercial Activities openings.</h4>
+        <p>
+            These graphs show how commercial activities are moving and in particular how many new openings are
+            in the category of public places.
+        </p>
+
+        <figure>
+            <img src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/ep_total_openings_20.png" loading="lazy" alt="over 20 plot" width="600" height="400">
+            <figcaption>Opening in 20 Years</figcaption>
+
+            <img src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/ep_total_openings_20_regplot.png" loading="lazy" alt="over 20regplot" width="600" height="400">
+            <figcaption>Opening in 20 Years - regplot</figcaption>
+        </figure>
+
+        <h4>Clustering with Foursquare API.</h4>
+        <figure>
+            <img src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/selected_zones_venues_nobg.png" loading="lazy" alt="FS zones" width="600" height="400">
+            <figcaption>Clustering using Foursquare in selected zones</figcaption>
+
+        <img src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/full_city_venues_2.png" loading="lazy" alt="FS full city" width="600" height="400">
+            <figcaption>Clustering using Foursquare - all city</figcaption>
+        </figure>
+
+        <h4>Concentration and Clustering with Public Open Data.</h4>
+        <p>
+            This map shows the concentration of public places throughout the city and in relation to the areas
+            selected with a black border. The most impacted areas are <strong>B2, B5, B7</strong> with a greater
+            exposure for the <strong>B8</strong> area. Especially in the areas more marked with the red color
+            there are night clubs, cocktail bars, restaurants and correspond to the classic areas of nocturnal
+            concentration and are the most problematic for civil coexistence.
+        </p>
+
+        <figure>
+            <img
+                    src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/ep_concentration_hm.png" loading="lazy" alt="heatmap ac ep" width="600" height="400">
+            <figcaption>Heatmap of public places based on Public Open Data - all city</figcaption>
+        </figure>
+
+        <p>
+            Clustering results.
+        </p>
+        <figure>
+            <img src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/TO_ac_full_cluster.png" loading="lazy" alt="full city public data" width="600" height="400">
+            <figcaption>Clustering using Public Open Data - all city</figcaption>
+        </figure>
+
+        <h3 id="pa-exp">Public Authority Exploration</h3>
+
+        <h4>Public Authority and Contact Center</h4>
+        <p>
+            This observation shows the most problematic areas of the city considering the level of Infringement
+            Notifications issued by the public authority to suppress the phenomena of harassment, shouting, noise
+            from public places, too much music volume, high concentrations of people, etc. In general, it can be said
+            that the higher the concentration of public places, the higher the incivility phenomenon, especially at
+            night. There is a geographical correspondence of the phenomenon especially in the selected and more
+            central areas.
+            Macro-zone <em>B</em>, which corresponds with its selected zones in the observation to Districts 1 and 8,
+            is clearly the most impacted due to the high number of concentration of public nightclubs, bars,
+            restaurants.
+            <br>
+            The phenomenon extends to neighboring areas and elsewhere, but the level of concentration in this case is
+            relatively low and attributable to harassing behavior in its own right rather than to the concentration
+            of people.
+            <br>
+            The data available from 2011 to the second quarter of 2019 were analyzed. For the unavailable data,
+            the average was applied taking into account the previous years. The missing data refer to the second
+            half of 2019.
+            <br>
+            Considering the years from 2011 to 2019, there is a decrease in the number of penalties applied.
+            Observing the available data, it can be seen that from 2011 to 2014 the control was tighter, while from
+            2015 to 2018 the type of control diversified and became more relaxed.
+            <br>
+            The 5 major categories of abuse or misconduct are taken as examples in the table.
+            The type <em>FORBIDDEN CONDUCT</em> refers to the behavior of people, including their behavior outside
+            the premises, while the other types are sanctions applied to public premises.
+        </p>
+
+        <table>
+            <caption>2011 - 2014</caption>
+            <thead>
+            <tr>
+                <th>Type</th>
+                <th>Infringements</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>FORBIDDEN CONDUCT</td>
+                <td>705</td>
+            </tr>
+            <tr>
+                <td>SHOWS AND ENTERTAINMENTS</td>
+                <td>558</td>
+            </tr>
+            <tr>
+                <td>COMPLIANCE</td>
+                <td>404</td>
+            </tr>
+            <tr>
+                <td>AUTHORIZATION</td>
+                <td>208</td>
+            </tr>
+            <tr>
+                <td>ABUSIVE OCCUPATION</td>
+                <td>165</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <caption>2015 - 2018</caption>
+            <thead>
+            <tr>
+                <th>Type</th>
+                <th>Infringements</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>FORBIDDEN CONDUCT</td>
+                <td>352</td>
+            </tr>
+            <tr>
+                <td>SALE AND HOLDING OF BEVERAGES</td>
+                <td>324</td>
+            </tr>
+            <tr>
+                <td>AUTHORIZATION</td>
+                <td>268</td>
+            </tr>
+            <tr>
+                <td>COMPLIANCE</td>
+                <td>261</td>
+            </tr>
+            <tr>
+                <td>GENERIC</td>
+                <td>233</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <table>
+            <caption>Contact Center Data</caption>
+            <thead>
+            <tr>
+                <th>harassment categories</th>
+                <th>Nr.</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Youth groups</td>
+                <td>101</td>
+            </tr>
+            <tr>
+                <td scope="row" style="color: lightcoral;">Other</td>
+                <td>4245</td>
+            </tr>
+            <tr>
+                <td>Harassing behavior</td>
+                <td>592</td>
+            </tr>
+            <tr>
+                <td>Public Places disturbances</td>
+                <td>1836</td>
+            </tr>
+            <tr>
+                <td>Troublesome noises</td>
+                <td>1152</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>
+            Note the value assigned to <em>Other</em>.
+            <br>
+            It is very meaningful and could also include reports regarding other categories,
+            but it depends on how the data has been categorized by the public authority's Contact Center.
+        </p>
+
+        <figure>
+            <img
+                    src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/vrc_infring.png" loading="lazy" alt="infr " width="600" height="400">
+            <figcaption>Total Infringement Notifications from dataset 2011 - 2019</figcaption>
+        </figure>
+
+        <p>
+            The following is the final representation with the data of the Infringement in relation to those of the
+            Contacts for the period 2012-2018 which excludes the data in which the latter is not available or
+            insufficient.
+            <br>
+            Note that there is no close relationship between intervention and reporting. Often the interventions of the
+            authorities are not necessarily linked to a single event or to the contact of the citizen: the
+            investigations can also be consequent to independent control and prevention operations.
+        </p>
+
+        <figure>
+            <img
+                    src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/vrc_vs_cc12-18.png" loading="lazy" alt="vrc vs cs" width="600" height="400">
+            <figcaption>Contacts vs Infringement Notifications</figcaption>
+        </figure>
+
+        <p>
+            The following is the map that represents the hottest areas in which bad behavior of citizens and managers
+            of public places develop. Comparing the areas with those of the commercial categories it is possible
+            to note that they essentially overlap.
+        </p>
+
+        <figure>
+            <img
+                    src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/vrc_redux_map_hm.png" loading="lazy" alt="heatmap vrc redux" width="600" height="400">
+            <figcaption>Heatmap of the most restless zones</figcaption>
+        </figure>
+
+        <p>
+            This is the relationship between Infringements and the most "hot" periods of the year. It is possible to
+            note that the months of August (mid-summer) and December (mid-winter) are generally the least affected by
+            the production of notifications and sanctions, while the months in which the most checks occur are spring
+            and autumn.
+        </p>
+
+        <figure>
+            <img
+                    src="https://github.com/proto/Coursera_Capstone/raw/master/notebooks/TheBattleofNeighborhoods_final/vrc_heatmap_sns.png" loading="lazy" alt="heatmap vrc" width="600" height="400">
+            <figcaption>Heatmap of the most restless zones - monthly</figcaption>
+        </figure>
+
+        <p>
+            The Contact for each Districts is shown here.
+            <br>
+            The top Districts ar 1, 8 - that contain Zones B and C - and 7, near to District 1.
+        </p>
+
+        <table>
+            <caption>Contacts per Districts</caption>
+            <thead>
+            <tr>
+                <th>District</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>1532</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>660</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>846</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>768</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>774</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>966</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>1131</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>1249</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <h2 id="discussion">Discussion</h2>
+        <p>
+            In this observation, the relationship between commercial activities, nightlife and public force
+            intervention to repress and / or keep under control the phenomena of incivility and bad behavior caused
+            by the increase in entertainment venues was analyzed.
+            It has been shown that where the concentration is high, the phenomenon of incivility is more evident and
+            marked. Furthermore, some Districts suffer more from the bad habits of uncivilized citizens, whether
+            they are customers or managers of public places. Obligations are also imposed on the latter to maintain
+            control of their customers.
+            <br>
+            In addition, there are numerous non-compliance with the regulations and the lack of licenses by the
+            operators of the sector, as well as the same agreements made with the residents of certain areas.
+            <br>
+            Over time, the public authority has had to counteract the phenomenon of bad nightlife with specific
+            ordinances, limiting in certain cases operating hours, up to the closure for a certain period of some
+            commercial activities due to repeated violations or noise emitted with loud or music, manifesting inability
+            to manage customers. However, the number of violations of the regulations is considerable when compared to
+            the population of the city and the phenomenon is often dealt with in local news.
+            <br>
+            Last but not least, petitions and complaints against local public bodies for omission or inability
+            to limit the noise that occurs in certain areas and at certain times.
+            <br>
+            In the report it was not possible to use the most recent data as they were not yet produced by the
+            institutions, so the pre-Covid period was only taken into consideration, limited to 2019. Following the
+            prolonged lockdown, the Municipality decided to "help" the public places (closed for months) allowing the
+            possibility of expanding one's business to the outside, on a public street through the installation
+            of "temporary" dehors, at zero cost. This ordinance was followed by an additional incentive practice by
+            establishing new pedestrian areas near public places. All to the detriment of the residents, with traffic
+            and parking problems that are added to the already known problems of incivility.
+            <br>
+            Having analyzed the phenomenon starting from the initial question on the selection of a central area
+            in which to take up residence, it was necessary to understand if there are other factors to determine a
+            bad choice for the future and which must be taken into account.
+            <br>
+            In general, it could be said that the central areas are undoubtedly the most popular because they
+            have more services and are the best served, on the other hand they are also the least quiet,
+            especially on weekends. But this is not the case in all areas. Some are islands of tranquility - in
+            relation to the available data and not only to personal subjectivity - but clearly at a price sometimes
+            higher than the average of the real estate market.
+            <br>
+            Finally, from the selected areas, those where human and nocturnal recreational activity is most
+            concentrated can be excluded: B8, followed by B7, part of B2 and B5. The hilly areas and along
+            the River Po south of the center and west of it remain quiet areas.
+        </p>
+
+
+        <h2 id="suggestion">Suggestions and Directions</h2>
+        <p>
+            In this report some variables have not been considered such as the resident population for each area,
+            the quality of transport and services, traffic, but above all the part relating to the transfer of
+            commercial activities and what is the relevance on the socio-economic factor of the City.
+            <br>
+            In the future, it may be necessary to use and compare the data following the Covid pandemic
+            and subsequent municipal ordinances to verify promptly whether they have positively or negatively
+            affected the resident population.
+        </p>
+
+        <h2 id=references>References</h2>
+
+        <div class="footnotes">
+            <p id="fn1">
+                1. GeoPandas Library
+                <a href="https://geopandas.org/">GeoPandas</a>.
+                <a href="#ref1" title="up">↩</a>
+            </p>
+            <p id="fn2">
+                2. EPSG
+                <a href="https://epsg.io/">EPSG</a>.
+                <a href="#ref2" title="up">↩</a>
+            </p>
+            <p id="fn3">
+                3. Foursquare
+                <a href="https://developer.foursquare.com/docs/">Foursquare API</a>.
+                <a href="#ref3" title="up">↩</a>
+            </p>
+            <p id="fn4">
+                4. Private market analysis
+                <a href="https://www.immobiliare.it/info/ufficio-stampa/2020/fuori-sede-il-covid-19-svuota-le-stanze-nelle-citta-universitarie-2050/">Immobiliare</a>.
+                <a href="#ref4" title="up">↩</a>
+            </p>
+        </div>
+
+        <h2 id=appendix">Appendix</h2>
+        <h3 id="tab-ref">Table Reference</h3>
+        <table>
+            <caption>Naming convention adopted</caption>
+            <thead>
+            <tr>
+                <th></th>
+                <th>Original</th>
+                <th >Translation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>0</th>
+                <td>CIRCOSCRIZ</td>
+                <td>District</td>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td>DENOMINAZ</td>
+                <td>Name</td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>INDIRIZZO</td>
+                <td>Address</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>CAP</td>
+                <td>PostalCode</td>
+            </tr>
+            <tr>
+                <th>4</th>
+                <td>geometry</td>
+                <td>geometry</td>
+            </tr>
+            <tr>
+                <th>5</th>
+                <td>ID_QUART</td>
+                <td>ID_BORO</td>
+            </tr>
+            <tr>
+                <th>6</th>
+                <td>DENOM</td>
+                <td>Name</td>
+            </tr>
+            <tr>
+                <th>7</th>
+                <td>DID</td>
+                <td>DID</td>
+            </tr>
+            <tr>
+                <th>8</th>
+                <td>NCIRCO</td>
+                <td>District nr.</td>
+            </tr>
+            <tr>
+                <th>9</th>
+                <td>Fascia</td>
+                <td>Zone</td>
+            </tr>
+            <tr>
+                <th>10</th>
+                <td>Descr_Tipologia</td>
+                <td>Macro Area</td>
+            </tr>
+            <tr>
+                <th>11</th>
+                <td>Stato</td>
+                <td>Typology_Descr</td>
+            </tr>
+            <tr>
+                <th>12</th>
+                <td>Compr_min</td>
+                <td>Status</td>
+            </tr>
+            <tr>
+                <th>13</th>
+                <td>Compr_max</td>
+                <td>Sell_min</td>
+            </tr>
+            <tr>
+                <th>14</th>
+                <td>Zona_Descr</td>
+                <td>Sell_max</td>
+            </tr>
+            <tr>
+                <th>15</th>
+                <td>ZID</td>
+                <td>Mean</td>
+            </tr>
+            <tr>
+                <th>16</th>
+                <td>Zona</td>
+                <td>Zone_Descr</td>
+            </tr>
+            <tr>
+                <th>17</th>
+                <td>Year</td>
+                <td>ZID</td>
+            </tr>
+            <tr>
+                <th>18</th>
+                <td>Semester</td>
+                <td>Year</td>
+            </tr>
+            <tr>
+                <th>19</th>
+                <td>Mean</td>
+                <td>Semester</td>
+            </tr>
+            <tr>
+                <th>20</th>
+                <td>C_COMP_MER</td>
+                <td>Comm_Sector</td>
+            </tr>
+            <tr>
+                <th>21</th>
+                <td>INDIRIZZ</td>
+                <td>Address</td>
+            </tr>
+            <tr>
+                <th>22</th>
+                <td>ANNO_INI</td>
+                <td>Year_begin</td>
+            </tr>
+            <tr>
+                <th>23</th>
+                <td>MESE_INI</td>
+                <td>Month_begin</td>
+            </tr>
+            <tr>
+                <th>24</th>
+                <td>TIPO_MER</td>
+                <td>Product_Type</td>
+            </tr>
+            <tr>
+                <th>25</th>
+                <td>DESC_RIP</td>
+                <td>BreakDown_Descr</td>
+            </tr>
+            <tr>
+                <th>26</th>
+                <td>DETT_RIP</td>
+                <td>BreakDown_Detail</td>
+            </tr>
+            <tr>
+                <th>27</th>
+                <td>CAT_MER</td>
+                <td>PROD_CAT</td>
+            </tr>
+            <tr>
+                <th>28</th>
+                <td>PREVALEN</td>
+                <td>Prevalence</td>
+            </tr>
+            <tr>
+                <th>29</th>
+                <td>TIPO_LOC</td>
+                <td>Location_Type</td>
+            </tr>
+            <tr>
+                <th>30</th>
+                <td>MQ_TOT_L</td>
+                <td>SQM_TOT_L</td>
+            </tr>
+            <tr>
+                <th>31</th>
+                <td>MQ_TOT_V</td>
+                <td>SQM_TOT_V</td>
+            </tr>
+            <tr>
+                <th>32</th>
+                <td>TIPO_ADD</td>
+                <td>ADD_TYPE</td>
+            </tr>
+            <tr>
+                <th>33</th>
+                <td>NOME_ADD</td>
+                <td>ADD_NAME</td>
+            </tr>
+            <tr>
+                <th>34</th>
+                <td>Anno_Accertamento</td>
+                <td>Year_Fine</td>
+            </tr>
+            <tr>
+                <th>35</th>
+                <td>Mese_Accertamento</td>
+                <td>Month_Fine</td>
+            </tr>
+            <tr>
+                <th>36</th>
+                <td>Giorno_Accertamento</td>
+                <td>Day_Fine</td>
+            </tr>
+            <tr>
+                <th>37</th>
+                <td>Tipologia_Verbale</td>
+                <td>Report_type</td>
+            </tr>
+            <tr>
+                <th>38</th>
+                <td>Tipo_Sanzione</td>
+                <td>Sanction_type</td>
+            </tr>
+            <tr>
+                <th>39</th>
+                <td>Via_1</td>
+                <td>Street_1</td>
+            </tr>
+            <tr>
+                <th>40</th>
+                <td>Numero_Civico</td>
+                <td>House_Number</td>
+            </tr>
+            <tr>
+                <th>41</th>
+                <td>Via_2</td>
+                <td>Street_2</td>
+            </tr>
+            <tr>
+                <th>42</th>
+                <td>Descrizione_Sanzione</td>
+                <td>Sanction_Description</td>
+            </tr>
+            <tr>
+                <th>43</th>
+                <td>Descrizione_Paragrafo</td>
+                <td>Paragraph_Description</td>
+            </tr>
+            <tr>
+                <th>44</th>
+                <td>Descrizione_Capitolo</td>
+                <td>Description_Chapter</td>
+            </tr>
+            <tr>
+                <th>45</th>
+                <td>Descrizione_Prontuario</td>
+                <td>Description_Handbook</td>
+            </tr>
+            <tr>
+                <th>46</th>
+                <td>Numero_Verbali</td>
+                <td>Penalties_Number</td>
+            </tr>
+            <tr>
+                <th>47</th>
+                <td>Categoria</td>
+                <td>Category</td>
+            </tr>
+            <tr>
+                <th>48</th>
+                <td>Sottocategoria</td>
+                <td>Subcategory</td>
+            </tr>
+            <tr>
+                <th>49</th>
+                <td>Circoscrizione</td>
+                <td>District</td>
+            </tr>
+            <tr>
+                <th>50</th>
+                <td>Localita</td>
+                <td>Location</td>
+            </tr>
+            <tr>
+                <th>51</th>
+                <td>Area Verde</td>
+                <td>Green Area</td>
+            </tr>
+            <tr>
+                <th>52</th>
+                <td>Data</td>
+                <td>Date</td>
+            </tr>
+            <tr>
+                <th>53</th>
+                <td>Ora</td>
+                <td>Time</td>
+            </tr>
+            </tbody>
+        </table>
+    </article>
+</main>
+
+
+</body>
+
+</html>
